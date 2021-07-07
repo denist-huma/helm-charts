@@ -37,6 +37,12 @@ globalConnectionSecret:
 # - the name of the same namespace where the Operator is installed to.
 watchNamespaces: ""
 
+# (Optional) These flags allow to disable any reconcilers.
+disableReconcilers:
+  cluster: false
+  project: false
+  databaseUser: false
+
 # Use these values to use a different Operator image.
 image:
   repository: mongodb/mongodb-atlas-kubernetes-operator
