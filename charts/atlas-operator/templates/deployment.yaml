@@ -44,6 +44,14 @@ spec:
           - name: WATCH_NAMESPACE
             value: "{{- .Values.watchNamespaces }}"
           {{- end }}
+          {{- with .Values.disableReconcilers }}
+          - name: DISABLE_ATLAS_CLUSTER_RECONCILER
+            value: "{{- .cluster }}"
+          - name: DISABLE_ATLAS_PROJECT_RECONCILER
+            value: "{{- .project }}"
+          - name: DISABLE_ATLAS_DATABASE_USER_RECONCILER
+            value: "{{- .databaseUser }}"
+          {{- end }}
           - name: OPERATOR_POD_NAME
             valueFrom:
               fieldRef:
